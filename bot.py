@@ -11,3 +11,4 @@ class Bot:
         res = urlopen(url)
         json = res.read()
         res.close()
+        return json
