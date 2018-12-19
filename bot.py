@@ -1,6 +1,6 @@
-import urllib.request
-import urllib.parse
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
+from urllib.parse
+
 
 
 class Bot:
@@ -20,7 +20,7 @@ class Bot:
         url = self.base_url % (self.token,"sendMessage")
         params = urllib.parse.urlencode({"chat_id": chat_id ,"text": text})     #url encoding string == "chat_id=?&text=?"
         url = url + "?" + params
-        req = urllib.request.Request(url)
+        req = Request(url)
         req.add_header("charset","UTF-8")
         req.add_header("Content-Type","application/json")
         urlopen(req)
