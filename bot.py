@@ -15,7 +15,7 @@ class Bot:
         res.close()
         return json
 
-    def send_message(self, chat_id,text):
+    def send_message(self, chat_id, text):
         url = self.base_url % (self.token, "sendMessage")
         params = urlencode({"chat_id": chat_id, "text": text})     #url encoding string == "chat_id=?&text=?"
         url = url + "?" + params
