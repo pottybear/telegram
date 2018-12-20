@@ -1,5 +1,5 @@
 from urllib.parse import urlencode
-from urllib.request import urlopen,Request
+from urllib.request import urlopen, Request
 
 
 class Bot:
@@ -15,11 +15,11 @@ class Bot:
         res.close()
         return json
 
-    def send_message(self,chat_id,text):
-        url = self.base_url % (self.token,"sendMessage")
-        params = urlencode({"chat_id": chat_id ,"text": text})     #url encoding string == "chat_id=?&text=?"
+    def send_message(self, chat_id,text):
+        url = self.base_url % (self.token, "sendMessage")
+        params = urlencode({"chat_id": chat_id, "text": text})     #url encoding string == "chat_id=?&text=?"
         url = url + "?" + params
         req = Request(url)
-        req.add_header("charset","UTF-8")
-        req.add_header("Content-Type","application/json")
+        req.add_header("charset", "UTF-8")
+        req.add_header("Content-Type", "application/json")
         urlopen(req)
