@@ -26,9 +26,9 @@ class Bot:
 
     def send_photo(self, chat_id, photo_id, caption):
         url = self.base_url % (self.token, "sendPhoto")
-        params  = urllib.parse.urlencode({"chat_id" : chat_id, "photo" : photo_id, "caption" : caption, "parse_mode" : "HTML"})
+        params  = urlencode({"chat_id" : chat_id, "photo" : photo_id, "caption" : caption, "parse_mode" : "HTML"})
         url = url + "?" + params
-        req = urllib.request.Request(url)
+        req = Request(url)
         req.add_header("charset", "UTF-8")
         req.add_header("Content-Type", "application/json")
         urlopen(req)
